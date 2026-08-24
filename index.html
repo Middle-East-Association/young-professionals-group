@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Young Professionals Group | The Middle East Association</title>
+  <meta name="description" content="Join the Middle East Association Young Professionals Group (YPG) — a network for under-35s engaged with the MENA region. Free to sign up; membership is on approval." />
+  <link rel="icon" type="image/jpeg" href="assets/mea-logo.jpeg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" />
+  <style>
+    :root {
+      --plum: #5C1A6B;
+      --plum-deep: #3D0F48;
+      --plum-accent: #7A2990;
+      --parchment: #F8F4EF;
+      --cream: #FDFBF9;
+      --taupe: #DDD6CC;
+      --gold: #8B7355;
+      --gold-light: #B09A78;
+      --text-primary: #1A0F1E;
+      --text-secondary: #5A4F60;
+      --text-muted: #7A6A85;
+      --plum-tint: #F0EBF5;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: Inter, system-ui, sans-serif;
+      color: var(--text-primary);
+      background: var(--cream);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    h1, h2, h3, .serif {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-weight: 600;
+      letter-spacing: 0.01em;
+    }
+
+    a { color: inherit; }
+
+    .container {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 0 28px;
+    }
+
+    /* ---------- Header ---------- */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(253, 251, 249, 0.92);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--taupe);
+    }
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 28px;
+      max-width: 1080px;
+      margin: 0 auto;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+    .brand img { width: 40px; height: 40px; }
+    .brand-text {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      line-height: 1.15;
+    }
+    .brand-text .name {
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--plum-deep);
+    }
+    .brand-text .sub {
+      font-family: Inter, sans-serif;
+      font-size: 0.62rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+    .nav-cta {
+      display: inline-block;
+      font-family: Inter, sans-serif;
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.03em;
+      color: #fff;
+      background: var(--plum);
+      padding: 10px 20px;
+      border-radius: 2px;
+      text-decoration: none;
+      transition: background 0.2s ease;
+    }
+    .nav-cta:hover { background: var(--plum-deep); }
+
+    /* ---------- Hero ---------- */
+    .hero {
+      background: linear-gradient(150deg, var(--plum-deep) 0%, var(--plum) 55%, var(--plum-accent) 100%);
+      color: #fff;
+      text-align: center;
+      padding: 84px 28px 92px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 50% 0%, rgba(255,255,255,0.10), transparent 60%);
+      pointer-events: none;
+    }
+    .hero-logo {
+      width: 84px;
+      height: 84px;
+      margin: 0 auto 28px;
+      background: #fff;
+      border-radius: 4px;
+      padding: 8px;
+      box-shadow: 0 5px 16px rgba(19, 10, 23, 0.35);
+    }
+    .hero h1 {
+      font-weight: 600;
+      line-height: 1.06;
+      margin: 0 auto;
+    }
+    .hero h1 .line {
+      display: block;
+      white-space: nowrap;
+    }
+    .hero h1 .line-1 { font-size: clamp(1.45rem, 5.4vw, 3.25rem); }
+    .hero h1 .line-2 { font-size: clamp(1.75rem, 6.4vw, 3.9rem); }
+    .hero h1 .ypg {
+      font-style: italic;
+      font-weight: 500;
+      color: var(--plum-tint);
+    }
+    .hero .tagline {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-style: italic;
+      font-size: clamp(1.25rem, 2.6vw, 1.7rem);
+      color: var(--plum-tint);
+      margin-top: 20px;
+    }
+    .hero p.lead {
+      max-width: 60ch;
+      margin: 26px auto 0;
+      color: rgba(240, 235, 245, 0.86);
+      font-size: 1.02rem;
+    }
+    .hero-actions {
+      margin-top: 38px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      justify-content: center;
+      align-items: center;
+    }
+    .btn-primary {
+      display: inline-block;
+      background: #fff;
+      color: var(--plum-deep);
+      font-family: Inter, sans-serif;
+      font-weight: 600;
+      font-size: 0.95rem;
+      letter-spacing: 0.02em;
+      padding: 15px 34px;
+      border-radius: 2px;
+      text-decoration: none;
+      box-shadow: 0 5px 16px rgba(19, 10, 23, 0.35);
+      transition: transform 0.15s ease, box-shadow 0.2s ease;
+    }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 22px rgba(19, 10, 23, 0.45); }
+    .btn-ghost {
+      display: inline-block;
+      color: #fff;
+      border: 1px solid rgba(255,255,255,0.5);
+      font-family: Inter, sans-serif;
+      font-weight: 500;
+      font-size: 0.9rem;
+      padding: 14px 28px;
+      border-radius: 2px;
+      text-decoration: none;
+      transition: background 0.2s ease;
+    }
+    .btn-ghost:hover { background: rgba(255,255,255,0.12); }
+    .hero-note {
+      margin-top: 22px;
+      font-size: 0.82rem;
+      letter-spacing: 0.02em;
+      color: rgba(240, 235, 245, 0.75);
+    }
+    .hero-note strong { color: #fff; font-weight: 600; }
+
+    /* ---------- Sections ---------- */
+    section { padding: 76px 0; }
+    section.alt { background: var(--parchment); }
+
+    .eyebrow {
+      font-family: Inter, sans-serif;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 14px;
+    }
+    .section-head { max-width: 62ch; }
+    .section-head.center { margin: 0 auto; text-align: center; }
+    h2.section-title {
+      font-size: clamp(1.9rem, 3.6vw, 2.6rem);
+      color: var(--plum-deep);
+      line-height: 1.12;
+    }
+    .section-head p {
+      margin-top: 16px;
+      color: var(--text-secondary);
+      font-size: 1.02rem;
+    }
+
+    .intro-copy p {
+      color: var(--text-secondary);
+      font-size: 1.08rem;
+      max-width: 68ch;
+    }
+    .intro-copy p + p { margin-top: 18px; }
+
+    .callout {
+      margin-top: 30px;
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      background: var(--plum-tint);
+      border-left: 3px solid var(--plum);
+      padding: 20px 24px;
+      border-radius: 2px;
+      max-width: 68ch;
+    }
+    .callout .badge {
+      flex-shrink: 0;
+      font-size: 0.66rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #fff;
+      background: var(--plum);
+      padding: 5px 10px;
+      border-radius: 2px;
+      margin-top: 3px;
+    }
+    .callout p { font-size: 0.96rem; color: var(--text-secondary); }
+    .callout strong { color: var(--plum-deep); }
+
+    /* ---------- Grids / Cards ---------- */
+    .grid {
+      display: grid;
+      gap: 22px;
+      margin-top: 44px;
+    }
+    .grid-3 { grid-template-columns: repeat(3, 1fr); }
+    .grid-2 { grid-template-columns: repeat(2, 1fr); }
+
+    .card {
+      background: var(--cream);
+      border: 1px solid var(--taupe);
+      border-radius: 2px;
+      padding: 30px 28px;
+      transition: transform 0.18s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    }
+    section.alt .card { background: #fff; }
+    .card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 5px 16px rgba(92, 26, 107, 0.14);
+      border-color: var(--plum-tint);
+    }
+    .card .icon {
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      background: linear-gradient(150deg, var(--plum-deep), var(--plum-accent));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 18px;
+    }
+    .card .icon svg { width: 22px; height: 22px; stroke: #fff; fill: none; stroke-width: 1.6; }
+    .card h3 {
+      font-size: 1.35rem;
+      color: var(--plum-deep);
+      margin-bottom: 8px;
+    }
+    .card p { color: var(--text-secondary); font-size: 0.95rem; }
+
+    /* ---------- Events ---------- */
+    .event {
+      display: flex;
+      gap: 26px;
+      align-items: stretch;
+      background: #fff;
+      border: 1px solid var(--taupe);
+      border-radius: 2px;
+      overflow: hidden;
+      transition: box-shadow 0.2s ease, transform 0.18s ease;
+    }
+    .event:hover { box-shadow: 0 5px 16px rgba(92, 26, 107, 0.14); transform: translateY(-2px); }
+    .event + .event { margin-top: 20px; }
+    .event .date {
+      flex-shrink: 0;
+      width: 128px;
+      background: linear-gradient(150deg, var(--plum-deep) 0%, var(--plum) 100%);
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 22px 10px;
+    }
+    .event .date .month {
+      font-size: 0.8rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--plum-tint);
+    }
+    .event .date .day {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 2.8rem;
+      font-weight: 600;
+      line-height: 1;
+      margin: 4px 0;
+    }
+    .event .date .year { font-size: 0.82rem; color: rgba(240,235,245,0.8); }
+    .event .body { padding: 24px 28px; display: flex; flex-direction: column; justify-content: center; }
+    .event .tag {
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 8px;
+    }
+    .event h3 { font-size: 1.5rem; color: var(--plum-deep); line-height: 1.15; }
+    .event p { color: var(--text-secondary); font-size: 0.95rem; margin-top: 8px; }
+
+    /* ---------- Sign up CTA ---------- */
+    .signup {
+      background: linear-gradient(150deg, var(--plum-deep) 0%, var(--plum) 55%, var(--plum-accent) 100%);
+      color: #fff;
+      text-align: center;
+      padding: 82px 28px;
+    }
+    .signup h2 { font-size: clamp(2rem, 4vw, 2.9rem); }
+    .signup p {
+      max-width: 56ch;
+      margin: 18px auto 0;
+      color: rgba(240, 235, 245, 0.88);
+      font-size: 1.05rem;
+    }
+    .signup .btn-primary { margin-top: 34px; }
+    .signup .fine {
+      margin-top: 20px;
+      font-size: 0.85rem;
+      color: rgba(240, 235, 245, 0.78);
+    }
+
+    /* ---------- Footer ---------- */
+    footer {
+      background: #130A17;
+      color: rgba(240, 235, 245, 0.7);
+      padding: 44px 28px;
+    }
+    .footer-inner {
+      max-width: 1080px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .footer-inner .brand-text .name { color: var(--plum-tint); }
+    .footer-inner .brand img { background: #fff; border-radius: 3px; padding: 4px; }
+    .footer-links { display: flex; gap: 24px; font-size: 0.88rem; }
+    .footer-links a { text-decoration: none; color: rgba(240,235,245,0.72); transition: color 0.2s ease; }
+    .footer-links a:hover { color: #fff; }
+
+    /* ---------- Responsive ---------- */
+    @media (max-width: 860px) {
+      .grid-3, .grid-2 { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 620px) {
+      .nav-cta { display: none; }
+      .event { flex-direction: column; }
+      .event .date { width: 100%; flex-direction: row; gap: 10px; padding: 14px; }
+      .event .date .day { font-size: 2rem; margin: 0; }
+      section { padding: 60px 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="header-inner">
+      <a class="brand" href="#top">
+        <img src="assets/mea-logo.jpeg" alt="The Middle East Association" />
+        <span class="brand-text">
+          <span class="name">Young Professionals Group</span><br />
+          <span class="sub">The Middle East Association</span>
+        </span>
+      </a>
+      <a class="nav-cta" href="https://forms.office.com/e/6zBnkTUPTR" target="_blank" rel="noopener">Sign Up — Free</a>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero" id="top">
+    <div class="container">
+      <img class="hero-logo" src="assets/mea-logo.jpeg" alt="The Middle East Association" />
+      <h1>
+        <span class="line line-1">The Middle East Association</span>
+        <span class="line line-2">Young Professionals Group <span class="ypg">(YPG)</span></span>
+      </h1>
+      <p class="tagline">Empowering the Next Generation of UK–MENA Leaders</p>
+      <p class="lead">
+        A dynamic network for individuals under 35 who are interested in or engaged with
+        the Middle East and North Africa (MENA) region — fostering meaningful connections
+        and supporting professional growth.
+      </p>
+      <div class="hero-actions">
+        <a class="btn-primary" href="https://forms.office.com/e/6zBnkTUPTR" target="_blank" rel="noopener">Sign Up to the YPG</a>
+        <a class="btn-ghost" href="#events">See Upcoming Events</a>
+      </div>
+      <p class="hero-note"><strong>Free to sign up.</strong> Membership is granted on approval.</p>
+    </div>
+  </section>
+
+  <!-- Intro -->
+  <section>
+    <div class="container">
+      <div class="eyebrow">About the Group</div>
+      <div class="intro-copy">
+        <p>
+          The Middle East Association (MEA) has established the Young Professionals Group (YPG)
+          — a network designed to foster meaningful connections and support the professional
+          growth of the next generation of UK–MENA leaders.
+        </p>
+        <p>
+          Membership is free to join, offering exclusive invitations to our events. By signing up,
+          you'll become part of our mailing list, ensuring you receive updates and invitations to
+          upcoming activities and opportunities.
+        </p>
+      </div>
+      <div class="callout">
+        <span class="badge">Please note</span>
+        <p>
+          <strong>Signing up is completely free.</strong> The YPG is open to individuals under 35,
+          and all applications to join are reviewed — <strong>membership is granted on approval.</strong>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- About the MEA -->
+  <section class="alt">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">Established 1961</div>
+        <h2 class="section-title">About the MEA</h2>
+        <p>
+          The Middle East Association (MEA) connects the UK with the Middle East and North Africa,
+          fostering partnerships across vital sectors and promoting collaboration in trade and
+          investment, culture and education, and development.
+        </p>
+      </div>
+      <div class="grid grid-3">
+        <div class="card">
+          <div class="icon">
+            <svg viewBox="0 0 24 24"><path d="M3 21h18M4 21V10l8-5 8 5v11M9 21v-6h6v6"/></svg>
+          </div>
+          <h3>Governance</h3>
+          <p>Connecting government entities and policy makers across the region.</p>
+        </div>
+        <div class="card">
+          <div class="icon">
+            <svg viewBox="0 0 24 24"><path d="M3 7h18v13H3zM8 7V4h8v3M3 12h18"/></svg>
+          </div>
+          <h3>Business &amp; NGOs</h3>
+          <p>Bridging commercial and non-profit organisations.</p>
+        </div>
+        <div class="card">
+          <div class="icon">
+            <svg viewBox="0 0 24 24"><path d="M12 3 2 8l10 5 10-5-10-5zM6 10v6c0 1 3 3 6 3s6-2 6-3v-6"/></svg>
+          </div>
+          <h3>Academia</h3>
+          <p>Linking educational institutions and researchers.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Join -->
+  <section>
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">The Benefits</div>
+        <h2 class="section-title">Why Join the Young Professionals Group?</h2>
+      </div>
+      <div class="grid grid-2">
+        <div class="card">
+          <div class="icon">
+            <svg viewBox="0 0 24 24"><path d="m21 2-9.5 9.5M15.5 7.5 21 2M7 14a4 4 0 1 0 3 6.9A4 4 0 0 0 7 14z"/></svg>
+          </div>
+          <h3>Exclusive Access</h3>
+          <p>
+            Connect with experts and professionals across business, government, academia and
+            international development. Members gain unique opportunities to attend networking
+            events, expert talks and exclusive roundtables.
+          </p>
+        </div>
+        <div class="card">
+          <div class="icon">
+            <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM23 21v-2a4 4 0 0 0-3-3.87M16 3.13A4 4 0 0 1 16 11"/></svg>
+          </div>
+          <h3>Build Your Network &amp; Advance Your Career</h3>
+          <p>
+            Engage with like-minded peers and senior leaders through mentorship and professional
+            development initiatives designed to help you build lasting relationships and enhance
+            your career trajectory.
+          </p>
+        </div>
+        <div class="card">
+          <div class="icon">
+            <svg viewBox="0 0 24 24"><path d="M12 20V10M18 20V4M6 20v-4"/></svg>
+          </div>
+          <h3>Learn, Share &amp; Lead</h3>
+          <p>
+            Join conversations shaping the future of the UK–MENA relationship — from diplomacy
+            and business to sustainability and innovation.
+          </p>
+        </div>
+        <div class="card">
+          <div class="icon">
+            <svg viewBox="0 0 24 24"><path d="M12 2 15.09 8.26 22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+          </div>
+          <h3>Enjoy Member Benefits</h3>
+          <p>
+            Receive discounted access to MEA events, visibility opportunities, and inclusion in a
+            growing community of globally minded professionals.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Who Should Join -->
+  <section class="alt">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">Is This You?</div>
+        <h2 class="section-title">Who Should Join</h2>
+      </div>
+      <div class="grid grid-3">
+        <div class="card">
+          <div class="icon">
+            <svg viewBox="0 0 24 24"><path d="M22 10 12 5 2 10l10 5 10-5zM6 12v5c0 1 2.7 2.5 6 2.5s6-1.5 6-2.5v-5"/></svg>
+          </div>
+          <h3>Early Career Professionals</h3>
+          <p>University graduates and early-career professionals under 35 with an interest in the MENA region.</p>
+        </div>
+        <div class="card">
+          <div class="icon">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18"/></svg>
+          </div>
+          <h3>Sector Specialists</h3>
+          <p>Individuals working or studying in politics, international relations, business, development, or Arabic and Middle Eastern studies.</p>
+        </div>
+        <div class="card">
+          <div class="icon">
+            <svg viewBox="0 0 24 24"><path d="M9 18h6M10 22h4M12 2a7 7 0 0 0-4 12.7c.6.5 1 1.3 1 2.1V17h6v-.2c0-.8.4-1.6 1-2.1A7 7 0 0 0 12 2z"/></svg>
+          </div>
+          <h3>Innovators &amp; Entrepreneurs</h3>
+          <p>Entrepreneurs, creatives, and innovators keen to engage with one of the world's most dynamic regions.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Upcoming Events -->
+  <section id="events">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">Save the Date</div>
+        <h2 class="section-title">Upcoming Events</h2>
+        <p>Sign up to the YPG to receive your invitations. Members are the first to hear about new events and opportunities.</p>
+      </div>
+      <div style="margin-top: 44px;">
+        <div class="event">
+          <div class="date">
+            <span class="month">Sep</span>
+            <span class="day">08</span>
+            <span class="year">2026</span>
+          </div>
+          <div class="body">
+            <span class="tag">Careers &amp; Panel Discussion</span>
+            <h3>Diplomacy Unpacked: Insights, Careers &amp; Connections with RUSI NextGen</h3>
+            <p>An evening exploring careers in diplomacy and international affairs, in partnership with RUSI NextGen — with insights, discussion and networking.</p>
+          </div>
+        </div>
+        <div class="event">
+          <div class="date">
+            <span class="month">Oct</span>
+            <span class="day">21</span>
+            <span class="year">2026</span>
+          </div>
+          <div class="body">
+            <span class="tag">Networking</span>
+            <h3>MEA Young Professionals: Connect &amp; Network</h3>
+            <p>A relaxed networking evening bringing together young professionals engaged with the UK–MENA region to make new connections.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sign up CTA -->
+  <section class="signup" id="signup">
+    <div class="container">
+      <div class="eyebrow" style="color: var(--gold-light);">Join the Network</div>
+      <h2>Sign Up to Receive Invitations</h2>
+      <p>
+        Become part of the MEA Young Professionals Group and receive invitations to our upcoming
+        events, talks and networking opportunities across the UK–MENA community.
+      </p>
+      <a class="btn-primary" href="https://forms.office.com/e/6zBnkTUPTR" target="_blank" rel="noopener">Sign Up Here — It's Free</a>
+      <p class="fine">Signing up is completely free. Membership is open to under-35s and is granted on approval.</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-inner">
+      <a class="brand" href="#top" style="text-decoration:none;">
+        <img src="assets/mea-logo.jpeg" alt="The Middle East Association" style="width:40px;height:40px;" />
+        <span class="brand-text">
+          <span class="name">Young Professionals Group</span><br />
+          <span class="sub">The Middle East Association</span>
+        </span>
+      </a>
+      <div class="footer-links">
+        <a href="https://forms.office.com/e/6zBnkTUPTR" target="_blank" rel="noopener">Sign Up</a>
+        <a href="https://the-mea.com/young-professionals" target="_blank" rel="noopener">YPG Home</a>
+        <a href="https://www.linkedin.com/company/mea-young-professionals-group" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
